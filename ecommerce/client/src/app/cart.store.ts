@@ -26,6 +26,15 @@ export class CartStore extends ComponentStore<Cart> {
         }
     )
 
+    readonly clearCart = this.updater<void>(
+        (cart:Cart) => {
+            const newCart:Cart = {
+                lineItems:[]
+            }
+            return newCart
+        }
+    )
+
     readonly getCart = this.select(
         (cart:Cart) => cart.lineItems
     )
