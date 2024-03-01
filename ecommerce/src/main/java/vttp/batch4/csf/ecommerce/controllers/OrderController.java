@@ -25,7 +25,7 @@ import vttp.batch4.csf.ecommerce.models.Order;
 import vttp.batch4.csf.ecommerce.services.PurchaseOrderService;
 
 @Controller
-@CrossOrigin(origins = {"http://localhost:4200"})
+// @CrossOrigin(origins = {"http://localhost:4200"})
 @RequestMapping(path="/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrderController {
 
