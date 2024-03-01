@@ -11,10 +11,15 @@ import {ProductService} from './product.service';
 import { CategoryComponent } from './components/category.component';
 import { OrderFormComponent } from './components/order-form.component';
 import {ConfirmCheckoutComponent} from './components/confirm-checkout.component';
+import { CartStore } from './cart.store';
 
 // NOTE: you are free to modify this file
 
 const appRoutes: Routes = [
+  {path:'', component:MainComponent},
+  {path:'category/:category', component:CategoryComponent},
+  {path:'checkout', component:ConfirmCheckoutComponent},
+  {path:'**', redirectTo:'/', pathMatch:'full'}
 ]
 
 @NgModule({
@@ -26,7 +31,7 @@ const appRoutes: Routes = [
     BrowserModule, HttpClientModule, ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [ ProductService ],
+  providers: [ ProductService, CartStore ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

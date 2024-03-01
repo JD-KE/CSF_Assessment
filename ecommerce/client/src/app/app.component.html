@@ -7,7 +7,7 @@
   </div>
 
   <div class="title-b">
-    <button type="button" (click)="checkout()">Checkout</button>
+    <button type="button" [disabled]="itemCount<=0" (click)="checkout()">Checkout</button>
   </div>
 
   <div class="title-c">
